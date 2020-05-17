@@ -14,35 +14,19 @@ import maya.cmds as cmds
 import maya.OpenMayaUI as omui
 import sys
 import pymel.core as pm
+from PySide.QtGui import QMainWindow
+from PySide import QtCore
+from ui._2016 import Ui_MainWindow
+import shiboken
 
 
 ver = cmds.about(version = True)
-
-
-if '2015' in ver:
-	from ui._2015 import Ui_MainWindow
-	from PyQt5.QtWidgets import QMainWindow
-	import shiboken
-
-elif '2016' in ver:
-	from PySide.QtGui.QtWidgets import QMainWindow
-	from ui._2016 import Ui_MainWindow
-	import shiboken
-	from maya.app.general.mayaMixin import MayaQWidgetDockableMixin
-
-else:
-	from PySide2.QtWidgets import QMainWindow
-	from ui._2017 import Ui_MainWindow
-	import shiboken2 as shiboken
-	from maya.app.general.mayaMixin import MayaQWidgetDockableMixin
-
-
 
 def get_main_window():
 	ptr = omui.MQtUtil.mainWindow()
 	return shiboken.wrapInstance(long(ptr), QMainWindow)
 
-class AttributeTransfer(MayaQWidgetDockableMixin, QMainWindow):
+class AttributeTransfer(QMainWindow):
 	def __init__(self, parent = get_main_window()):
 		super(AttributeTransfer, self).__init__(parent = parent)
 		self.ui = Ui_MainWindow()
