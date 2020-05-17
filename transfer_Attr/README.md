@@ -23,4 +23,4 @@ eg. "Documents\maya\2020\scripts"
 4. If all goes correctly you should get the tool a screen shot is given below
 
 
-    ![Ui Example](blob/master/transfer_Attr/ui/transfer_ui.JPG)
+    ![Ui Example](master/transfer_Attr/ui/transfer_ui.JPG)
