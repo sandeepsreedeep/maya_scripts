@@ -4,9 +4,15 @@
 eg. "Documents\maya\2020\scripts"
 2. Type the following code into the maya script editors python tab and run to access the tool
     ```python
-    import transfer_Attr
-    reload(transfer_Attr)
-    transfer_Attr.core.UI() 
+    import maya.cmds as cmds
+    ver = cmds.about(version = True)
+    if '2014' in ver:
+        import transfer_Attr.core_2014 as core
+    else:
+        import transfer_Attr.core as core
+
+    reload(core)
+    core.UI()
     ```
     for repeated use you could add the above snippet as a shelf icon
     
