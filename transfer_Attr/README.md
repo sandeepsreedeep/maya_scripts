@@ -18,9 +18,9 @@ eg. "Documents\maya\2020\scripts"
     
 3. A simple tool demo can be found here
 
-    [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/i5xlmWOz4wg/0.jpg)](http://www.youtube.com/watch?v=i5xlmWOz4wg)
+    [![Youtube thumbnail not found](http://img.youtube.com/vi/i5xlmWOz4wg/0.jpg)](http://www.youtube.com/watch?v=i5xlmWOz4wg)
     
 4. If all goes correctly you should get the tool a screen shot is given below
 
 
-    ![Ui Example](master/transfer_Attr/ui/transfer_ui.JPG)
+    ![Ui Example](/transfer_Attr/ui/transfer_ui.JPG)
