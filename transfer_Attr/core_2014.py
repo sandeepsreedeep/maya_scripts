@@ -180,16 +180,18 @@ class AttributeTransfer(QMainWindow):
 				defaultValue = pm.addAttr(sel_Obj + '.' + attribute, q = True, dv = True,)
 				if niceName:
 					pm.addAttr(new_Obj, ln = longName, nn = niceName,at = attributeType,dv = defaultValue)
-					if maxValue:
+					try:
 						pm.addAttr(new_Obj + '.' + attribute,e = True, max = maxValue)
-					if minValue:
 						pm.addAttr(new_Obj + '.' + attribute,e = True, min = minValue)
+					except:
+						pass
 				else:
 					pm.addAttr(new_Obj, ln = longName,at = attributeType,dv = defaultValue)
-					if maxValue:
+					try:
 						pm.addAttr(new_Obj + '.' + attribute,e = True, max = maxValue)
-					if minValue:
 						pm.addAttr(new_Obj + '.' + attribute,e = True, min = minValue)
+					except:
+						pass
 			elif attributeType == 'bool':
 				if niceName:
 					pm.addAttr(new_Obj, ln = longName, nn = niceName,at = attributeType)
